@@ -1,0 +1,511 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url('images/Grey Illustration Butterfly Background Instagram Story.png');
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 100vh;
+}
+/* Navbar Styling (from home.css) */
+#menubar {
+    background-color: #151269;
+    display: flex;
+    justify-content: space-between; /*Center the entire navbar content */
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.nav-links li a:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.active {
+    background-color: dodgerblue;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* Menu Icon */
+.menu-icon {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin-left: auto; /*Push menu icon to the right */
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links li a:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #151269;
+        border-radius: 0 0 20px 20px;
+        text-align: right;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #002b5b, #0056b3);
+    color: white;
+    padding: 50px;
+    text-align: left;
+    animation: fade-in 10s infinite alternate ease-in-out;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 50%;
+    line-height: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.hero-image img {
+    width: 450px;
+    height: auto;
+    animation: swirl 10s infinite alternate ease-in-out, moveLeftRight 10s infinite linear;
+}
+
+
+/* Swirl Rotation Animation */
+@keyframes swirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Left-Right Movement */
+@keyframes moveLeftRight {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0px); }
+}
+
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(15px); }
+}
+
+/* Call-to-Action Button */
+.join-now {
+    background-color: #0000ff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.join-now:hover {
+    transform: scale(1.05);
+    background-color: red;
+}
+
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /*Light blue gradient */
+    min-height: 350px;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #002b5b;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/*Feature Cards */
+.feature {
+    background: #ffffff; /*Light background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Feature Descriptions */
+.feature p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+
+
+
+/* Testimonials */
+.testimonials {
+    text-align: center;
+    padding: 50px;
+    background: #1b1b1b;
+    color: whitesmoke;
+    margin-top: 30px;
+    min-height: 350px;
+    cursor: pointer;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background: #2c2c2c;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* Styles for footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-media-links a {
+    margin-right: 10px;
+}
+
+
+/* Media Query for Responsive Layout */
+@media (max-width: 768px) {
+    .about-map iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .about-features {
+        grid-template-columns:1fr; /* Single column on smaller screens */
+    }
+}
+
+footer {
+    background-color: #151269;
+    color: whitesmoke;
+    padding: 40px 0 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-top: 0px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-container div {
+    margin-bottom: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    margin-top: 2px;
+    line-height: 1.8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.footer-links a i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.footer-links a.active {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: dodgerblue;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.footer-links a.active:hover {
+    color: whitesmoke;
+}
+
+.footer-links a:hover {
+    color: whitesmoke;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: black;
+}
+
+.footer-links i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-social a {
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: red;
+    transform: scale(1.5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 2px solid white;
+    padding-top: 10px;
+}
+
+.footer-links h3,
+.footer-about h3,
+.footer-contact h3,
+.footer-social h3 {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(51, 30, 25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+toggle .line2 {
+    opacity: 0;
+}
+
+toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackWise - User Login</title>
+    <link rel="stylesheet" type="text/css" href="redirect.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><b>WELCOME TO TRACKWISE</b></h1>
+        <p><b>Your trusted platform for efficient expense tracking and financial management.</b></p>
+
+        <h2><b>Login to Continue</b></h2>
+        
+        <!-- User Login Form -->
+        <form id="loginForm">
+            <label for="username"><b>Username</b></label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            
+            <label for="password"><b>Password</b></label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit"><b>Sign In</b></button>
+        </form>
+
+        <p id="message"></p>
+
+        <p><b>Don't have an account? <a href="customer.php"><b>Sign Up</b></a></b></p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#loginForm").submit(function(event){
+                event.preventDefault(); // Prevent page reload
+                
+                var username = $("#username").val();
+                var password = $("#password").val();
+    
+                $.ajax({
+                    url: "user_login.php", // Sends login data to user_login.php
+                    type: "POST",
+                    dataType: "json", // Expect JSON response
+                    data: { username: username, password: password, login: true },
+                    success: function(response) {
+                        if (response.status === "success") {
+                            $("#message").html("<span style='color: green;'>" + response.message + "</span>").fadeIn();
+                            setTimeout(function(){
+                                window.location.href = "./home.html"; // Redirect to home.html instead of dashboard.php
+                            }, 2000);
+                        } else {
+                            $("#message").html("<span style='color: red;'>" + response.message + "</span>").fadeIn();
+                        }
+                    },
+                    error: function() {
+                        $("#message").html("<span style='color: red;'>⚠️ Something went wrong. Try again.</span>").fadeIn();
+                    }
+                });
+            });
+    
+            // Prevent form duplication after clicking the back button
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        });
+    </script>
+    
+</body>
+</html>

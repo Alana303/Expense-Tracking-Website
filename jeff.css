@@ -1,0 +1,82 @@
+
+    .menubar{
+        background-color:rgb(51, 30, 25);
+        text-align: center;
+        position: fixed;
+        z-index: 500;
+        width: 100%;
+        
+    }
+    .menubar ul{
+        display:inline-flex;
+        list-style: none;
+        color:black;
+    }
+    .menubar ul li{
+        width: 150px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .menubar ul li a{
+        text-decoration: none;
+        color: yellow;
+    }
+    
+    body{
+        
+        font-family: sans-serif;
+    }
+    
+    .active{
+        background: black;
+        border-radius: 3px;
+        
+         
+    }
+    .menubar ul li a:hover{
+        color: white;
+    }
+    
+    .picturesdropdown{
+        display: none;
+    }
+    
+    .menubar ul li:hover .picturesdropdown{
+        display:block;
+        position: absolute;
+        background:green;
+        margin-top: 5px;
+        margin-left: -5px;
+        z-index: 11;
+    }
+    
+    .menubar ul li:hover .picturesdropdown ul{
+        display: block;
+        margin:10px;
+    }
+    
+    .menubar ul li:hover .picturesdropdown ul li{
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted white;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .menubar ul li:hover .picturesdropdown ul li:last-child{
+        border-bottom: none;
+    }
+    
+    .menubar ul li:hover .picturesdropdown ul li a:hover{
+        color:white;
+    }
+    .menubar .fa{
+        margin-right: 8px;
+    }
+    .about{
+        position: absolute;
+        top: 80px;
+        left: 700px;
+        width: 50%;
+    }
