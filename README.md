@@ -45,16 +45,16 @@ A simple, user-friendly web application designed to help users efficiently track
 ## 📸 Screenshots  
 
 ### 🔐 Login Page  
-![Login](./images/Screenshot%20(768).png)  
+![Login](./images/tobi1%20(2).png)  
 
 ### 📝 Registration Page  
-![Register](./images/Screenshot%20(763).png)  
+![Register](./images/tobi1%20(5).png)  
 
 ### 📊 Dashboard  
-![Dashboard](./images/Screenshot%20(767).png)  
+![Dashboard](./images/tobi1%20(3).png)  
 
 ### 📂 Expense Records  
-![Expenses](./images/Screenshot%20(769).png)    
+![Expenses](./images/tobi1%20(1).png)    
 
 ---
 
